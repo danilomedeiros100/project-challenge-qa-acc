@@ -1,0 +1,38 @@
+[35mDEBUG   [0m root:conftest.py:18 👤 Criando novo usuário para o teste: usuario_teste_2094
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/User HTTP/1.1" 201 92
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 288
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/Authorized HTTP/1.1" 200 4
+[35mDEBUG   [0m root:conftest.py:36 ✅ Usuário criado e autorizado com sucesso. ID: 246c906b-4828-4ee0-a731-76b30e0437a8, Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMjA5NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzcwOTkzfQ.sefKlg63ff2H8JTpswxiK9Xq42M5WSFvPoNKsIxraZY
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_given_que estou autenticado na API': [<FixtureDef argname='pytestbdd_stepdef_given_que estou autenticado na API' scope='function' baseid='tests/api/test_reservation.py'>]
+[32mINFO    [0m root:test_reservation.py:19 🟢 [INÍCIO] Teste de Autenticação do Usuário
+[35mDEBUG   [0m root:test_reservation.py:20 🔑 Verificando usuário... ID: 246c906b-4828-4ee0-a731-76b30e0437a8 | Token: eyJhbGciOiJIUzI1NiIs...
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/Authorized HTTP/1.1" 200 4
+[32mINFO    [0m root:test_reservation.py:24 ✅ Usuário autenticado com sucesso!
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "GET /Account/v1/User/246c906b-4828-4ee0-a731-76b30e0437a8 HTTP/1.1" 200 92
+[35mDEBUG   [0m root:api_client.py:35 📥 Resposta da API ao obter detalhes do usuário: 200 - {"userId":"246c906b-4828-4ee0-a731-76b30e0437a8","username":"usuario_teste_2094","books":[]}
+[32mINFO    [0m root:test_reservation.py:42 ✅ Usuário validado com sucesso para reserva de livros!
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_given_tenho o ID de dois livros disponíveis': [<FixtureDef argname='pytestbdd_stepdef_given_tenho o ID de dois livros disponíveis' scope='function' baseid='tests/api/test_reservation.py'>]
+[32mINFO    [0m root:test_reservation.py:47 📚 Buscando livros disponíveis...
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "GET /BookStore/v1/Books HTTP/1.1" 200 4514
+[32mINFO    [0m root:test_reservation.py:55 📖 Livros selecionados para reserva: ['9781449325862', '9781449331818']
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_when_envio uma requisição para reservar os livros': [<FixtureDef argname='pytestbdd_stepdef_when_envio uma requisição para reservar os livros' scope='function' baseid='tests/api/test_reservation.py'>]
+[32mINFO    [0m root:test_reservation.py:60 📝 Solicitando reserva dos livros...
+[35mDEBUG   [0m root:api_client.py:52 📤 Enviando requisição para reservar livros. Payload: {'userId': '246c906b-4828-4ee0-a731-76b30e0437a8', 'collectionOfIsbns': [{'isbn': '9781449325862'}, {'isbn': '9781449331818'}]}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /BookStore/v1/Books HTTP/1.1" 201 61
+[35mDEBUG   [0m root:api_client.py:55 📥 Resposta recebida da API: 201 - {"books":[{"isbn":"9781449325862"},{"isbn":"9781449331818"}]}
+[32mINFO    [0m root:test_reservation.py:63 📤 Resposta recebida da API: 201 - {"books":[{"isbn":"9781449325862"},{"isbn":"9781449331818"}]}
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_then_a API deve confirmar a reserva dos livros': [<FixtureDef argname='pytestbdd_stepdef_then_a API deve confirmar a reserva dos livros' scope='function' baseid='tests/api/test_reservation.py'>]
+[32mINFO    [0m root:test_reservation.py:69 ✅ Reserva confirmada com sucesso!
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_then_os livros devem estar no perfil do usuário': [<FixtureDef argname='pytestbdd_stepdef_then_os livros devem estar no perfil do usuário' scope='function' baseid='tests/api/test_reservation.py'>]
+[32mINFO    [0m root:test_reservation.py:74 🔍 Validando se os livros estão no perfil do usuário...
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "GET /Account/v1/User/246c906b-4828-4ee0-a731-76b30e0437a8 HTTP/1.1" 200 1225
+[35mDEBUG   [0m root:api_client.py:35 📥 Resposta da API ao obter detalhes do usuário: 200 - {"userId":"246c906b-4828-4ee0-a731-76b30e0437a8","username":"usuario_teste_2094","books":[{"isbn":"9781449325862","title":"Git Pocket Guide","subTitle":"A Working Introduction","author":"Richard E. Silverman","publish_date":"2020-06-04T08:48:39.000Z","publisher":"O'Reilly Media","pages":234,"description":"This pocket guide is the perfect on-the-job companion to Git, the distributed version control system. It provides a compact, readable introduction to Git for new users, as well as a reference to common commands and procedures for those of you with Git exp","website":"http://chimera.labs.oreilly.com/books/1230000000561/index.html"},{"isbn":"9781449331818","title":"Learning JavaScript Design Patterns","subTitle":"A JavaScript and jQuery Developer's Guide","author":"Addy Osmani","publish_date":"2020-06-04T09:11:40.000Z","publisher":"O'Reilly Media","pages":254,"description":"With Learning JavaScript Design Patterns, you'll learn how to write beautiful, structured, and maintainable JavaScript by applying classical and modern design patterns to the language. If you want to keep your code efficient, more manageable, and up-to-da","website":"http://www.addyosmani.com/resources/essentialjsdesignpatterns/book/"}]}
+[32mINFO    [0m root:test_reservation.py:81 ✅ Livros reservados confirmados no perfil do usuário!

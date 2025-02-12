@@ -1,0 +1,29 @@
+[35mDEBUG   [0m root:conftest.py:18 👤 Criando novo usuário para o teste: usuario_teste_3256
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/User HTTP/1.1" 201 92
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 288
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/Authorized HTTP/1.1" 200 4
+[35mDEBUG   [0m root:conftest.py:36 ✅ Usuário criado e autorizado com sucesso. ID: 91235a00-aa62-4514-915b-58866e686172, Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMzI1NiIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzcwMDc3fQ.snObU_0NCt08hAHcwQsy8CsRafNZh25DkZfZV-PG2MM
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_given_que estou autenticado na API': [<FixtureDef argname='pytestbdd_stepdef_given_que estou autenticado na API' scope='function' baseid='tests/api/test_reservation.py'>]
+[35mDEBUG   [0m root:test_reservation.py:12 🔐 Verificando autenticação do usuário... ID: 91235a00-aa62-4514-915b-58866e686172, Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMzI1NiIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzcwMDc3fQ.snObU_0NCt08hAHcwQsy8CsRafNZh25DkZfZV-PG2MM
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/Authorized HTTP/1.1" 200 4
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "GET /Account/v1/User/91235a00-aa62-4514-915b-58866e686172 HTTP/1.1" 200 92
+[35mDEBUG   [0m root:api_client.py:35 📥 Resposta da API ao obter detalhes do usuário: 200 - {"userId":"91235a00-aa62-4514-915b-58866e686172","username":"usuario_teste_3256","books":[]}
+[35mDEBUG   [0m root:test_reservation.py:20 ✅ Usuário validado com sucesso para reserva de livros.
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_given_tenho o ID de dois livros disponíveis': [<FixtureDef argname='pytestbdd_stepdef_given_tenho o ID de dois livros disponíveis' scope='function' baseid='tests/api/test_reservation.py'>]
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "GET /BookStore/v1/Books HTTP/1.1" 200 4514
+[35mDEBUG   [0m root:test_reservation.py:32 📚 Livros selecionados para reserva: ['9781449325862', '9781449331818']
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_when_envio uma requisição para reservar os livros': [<FixtureDef argname='pytestbdd_stepdef_when_envio uma requisição para reservar os livros' scope='function' baseid='tests/api/test_reservation.py'>]
+[35mDEBUG   [0m root:test_reservation.py:37 📤 Enviando requisição para reservar os livros...
+[35mDEBUG   [0m root:api_client.py:52 📤 Enviando requisição para reservar livros. Payload: {'userId': '91235a00-aa62-4514-915b-58866e686172', 'collectionOfIsbns': [{'isbn': '9781449325862'}, {'isbn': '9781449331818'}]}
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /BookStore/v1/Books HTTP/1.1" 201 61
+[35mDEBUG   [0m root:api_client.py:55 📥 Resposta recebida da API: 201 - {"books":[{"isbn":"9781449325862"},{"isbn":"9781449331818"}]}
+[35mDEBUG   [0m root:test_reservation.py:42 📥 Resposta recebida da API: 201 - {"books":[{"isbn":"9781449325862"},{"isbn":"9781449331818"}]}
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_then_a API deve confirmar a reserva dos livros': [<FixtureDef argname='pytestbdd_stepdef_then_a API deve confirmar a reserva dos livros' scope='function' baseid='tests/api/test_reservation.py'>]
+[35mDEBUG   [0m root:test_reservation.py:48 ✅ Reserva confirmada com sucesso!

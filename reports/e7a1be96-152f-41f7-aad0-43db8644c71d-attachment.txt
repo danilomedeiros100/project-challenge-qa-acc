@@ -1,0 +1,4 @@
+[35mDEBUG   [0m root:conftest.py:19 👤 Criando usuário de teste: usuario_teste_7665
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/User HTTP/1.1" 406 40
+[35mDEBUG   [0m root:conftest.py:26 ⚠️ Usuário já existe ou erro ao criar: {"code":"1204","message":"User exists!"}

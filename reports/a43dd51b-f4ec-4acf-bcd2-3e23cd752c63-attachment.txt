@@ -1,0 +1,12 @@
+2025-02-12 10:53:03,117 - DEBUG - 🔍 Antes do teste: Token Atual = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMTg5OSIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY4MzgxfQ.PdXYIh9NdEQwfYp4mhYzv4-rmlgCh312tgXjy1cXlL8
+2025-02-12 10:53:03,118 - DEBUG - Adding providers for fixture 'pytestbdd_stepimpl_given_que estou autenticado na API': [<FixtureDef argname='pytestbdd_stepdef_given_que estou autenticado na API' scope='function' baseid='tests/api/test_books.py'>]
+2025-02-12 10:53:03,118 - DEBUG - 🔐 Verificando autenticação do usuário...
+2025-02-12 10:53:03,118 - DEBUG - ✅ Usuário autenticado com sucesso!
+2025-02-12 10:53:03,119 - DEBUG - Adding providers for fixture 'pytestbdd_stepimpl_when_envio uma requisição para listar os livros': [<FixtureDef argname='pytestbdd_stepdef_when_envio uma requisição para listar os livros' scope='function' baseid='tests/api/test_books.py'>]
+2025-02-12 10:53:03,119 - DEBUG - 📤 Enviando requisição para listar os livros...
+2025-02-12 10:53:03,120 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:53:03,631 - DEBUG - https://demoqa.com:443 "GET /BookStore/v1/Books HTTP/1.1" 200 4514
+2025-02-12 10:53:03,632 - DEBUG - 📥 Resposta recebida: 200
+2025-02-12 10:53:03,632 - DEBUG - Adding providers for fixture 'pytestbdd_stepimpl_then_a API deve retornar a lista de livros disponíveis': [<FixtureDef argname='pytestbdd_stepdef_then_a API deve retornar a lista de livros disponíveis' scope='function' baseid='tests/api/test_books.py'>]
+2025-02-12 10:53:03,633 - DEBUG - 📊 Verificando resposta da API...
+2025-02-12 10:53:03,634 - DEBUG - ✅ Lista de livros validada com sucesso!

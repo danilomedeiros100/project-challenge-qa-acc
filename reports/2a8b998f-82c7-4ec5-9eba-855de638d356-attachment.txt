@@ -1,0 +1,17 @@
+[35mDEBUG   [0m root:conftest.py:48 🔍 Antes do teste: Token Atual = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNzQ0NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY4OTQ0fQ.Yc3opBHefet1u8iE4z3J2zDaRWxzoqRBrHzj6Hpj6K8
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_given_que estou autenticado na API': [<FixtureDef argname='pytestbdd_stepdef_given_que estou autenticado na API' scope='function' baseid='tests/api/test_reservation.py'>]
+[35mDEBUG   [0m root:test_reservation.py:13 🔐 Verificando autenticação do usuário... ID: c9a223f8-70ba-4f7d-b6ad-dd6cb681eee6, Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNzQ0NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY4OTQ0fQ.Yc3opBHefet1u8iE4z3J2zDaRWxzoqRBrHzj6Hpj6K8
+[35mDEBUG   [0m root:api_client.py:59 🔍 Verificando se o usuário c9a223f8-70ba-4f7d-b6ad-dd6cb681eee6 está autorizado...
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "GET /Account/v1/User/c9a223f8-70ba-4f7d-b6ad-dd6cb681eee6 HTTP/1.1" 401 48
+[35mDEBUG   [0m root:api_client.py:61 📥 Resposta da API: 401 - {"code":"1200","message":"User not authorized!"}
+[35mDEBUG   [0m root:test_reservation.py:19 🔄 Token inválido. Tentando regeneração...
+[35mDEBUG   [0m root:api_client.py:20 📤 Gerando token para usuário: usuario_teste_7444
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 288
+[35mDEBUG   [0m root:api_client.py:24 📥 Resposta da API ao gerar token: 200 - {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNzQ0NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY4OTQ5fQ.6zeoWv4kL-s3uxvdTfu7bgIwDpmT641I3uUvRrmMpLA","expires":"2025-02-19T14:02:29.408Z","status":"Success","result":"User authorized successfully."}
+[35mDEBUG   [0m root:api_client.py:29 ✅ Token gerado com sucesso: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNzQ0NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY4OTQ5fQ.6zeoWv4kL-s3uxvdTfu7bgIwDpmT641I3uUvRrmMpLA
+[35mDEBUG   [0m root:test_reservation.py:32 ✅ Novo Token Gerado: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNzQ0NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY4OTQ5fQ.6zeoWv4kL-s3uxvdTfu7bgIwDpmT641I3uUvRrmMpLA
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "GET /Account/v1/User/c9a223f8-70ba-4f7d-b6ad-dd6cb681eee6 HTTP/1.1" 401 48
+[35mDEBUG   [0m root:test_reservation.py:39 ❌ O ID do usuário pode estar incorreto após a regeneração do token.

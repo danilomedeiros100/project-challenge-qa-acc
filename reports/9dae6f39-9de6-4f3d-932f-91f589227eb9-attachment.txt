@@ -1,0 +1,11 @@
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_given_que estou autenticado na API': [<FixtureDef argname='pytestbdd_stepdef_given_que estou autenticado na API' scope='function' baseid='tests/api/test_books.py'>]
+[35mDEBUG   [0m root:test_books.py:15 🔐 Verificando autenticação do usuário...
+[35mDEBUG   [0m root:test_books.py:17 ✅ Usuário autenticado com sucesso!
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_when_envio uma requisição para listar os livros': [<FixtureDef argname='pytestbdd_stepdef_when_envio uma requisição para listar os livros' scope='function' baseid='tests/api/test_books.py'>]
+[35mDEBUG   [0m root:test_books.py:22 📤 Enviando requisição para listar os livros...
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "GET /BookStore/v1/Books HTTP/1.1" 200 4514
+[35mDEBUG   [0m root:test_books.py:25 📥 Resposta recebida: 200
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_then_a API deve retornar a lista de livros disponíveis': [<FixtureDef argname='pytestbdd_stepdef_then_a API deve retornar a lista de livros disponíveis' scope='function' baseid='tests/api/test_books.py'>]
+[35mDEBUG   [0m root:test_books.py:31 📊 Verificando resposta da API...
+[35mDEBUG   [0m root:test_books.py:36 ✅ Lista de livros validada com sucesso!

@@ -1,0 +1,26 @@
+[35mDEBUG   [0m root:conftest.py:18 👤 Criando novo usuário para o teste: usuario_teste_7591
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/User HTTP/1.1" 201 92
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 288
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/Authorized HTTP/1.1" 200 4
+[35mDEBUG   [0m root:conftest.py:36 ✅ Usuário criado e autorizado com sucesso. ID: 74f333f6-3dfd-42c6-9a6d-ef9b54d30184, Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNzU5MSIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzczNTg1fQ.B58y10C_4eNL4UCyx2ZxRc1izZzZgaLJgMzpBCOLvT4
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_given_que eu tenho um nome de usuário e uma senha válidos': [<FixtureDef argname='pytestbdd_stepdef_given_que eu tenho um nome de usuário e uma senha válidos' scope='function' baseid='tests/api/test_create_user.py'>]
+[32mINFO    [0m utils.logger:test_create_user.py:13 🟢 [INÍCIO] Gerando Usuário para Teste
+[32mINFO    [0m utils.logger:test_create_user.py:19 👤 Usuário Gerado: usuario_teste_4881
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_when_envio uma requisição para criar um usuário': [<FixtureDef argname='pytestbdd_stepdef_when_envio uma requisição para criar um usuário' scope='function' baseid='tests/api/test_create_user.py'>]
+[32mINFO    [0m utils.logger:test_create_user.py:24 📩 Enviando requisição para criar usuário...
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/User HTTP/1.1" 201 92
+[32mINFO    [0m utils.logger:test_create_user.py:28 📤 Resposta recebida da API: 201 - {"userID":"419c140d-b49e-4766-b1d5-3fdc6e3e2a43","username":"usuario_teste_4881","books":[]}
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_then_a API deve retornar um status 201': [<FixtureDef argname='pytestbdd_stepdef_then_a API deve retornar um status 201' scope='function' baseid='tests/api/test_create_user.py'>]
+[32mINFO    [0m utils.logger:test_create_user.py:34 ✅ Usuário criado com sucesso na API!
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_then_o usuário deve ser criado com sucesso': [<FixtureDef argname='pytestbdd_stepdef_then_o usuário deve ser criado com sucesso' scope='function' baseid='tests/api/test_create_user.py'>]
+[32mINFO    [0m utils.logger:test_create_user.py:39 🔍 Verificando se o usuário foi registrado corretamente...
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 288
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "GET /Account/v1/User/419c140d-b49e-4766-b1d5-3fdc6e3e2a43 HTTP/1.1" 200 92
+[35mDEBUG   [0m utils.logger:api_client.py:36 📥 Resposta da API ao obter detalhes do usuário: 200 - {"userId":"419c140d-b49e-4766-b1d5-3fdc6e3e2a43","username":"usuario_teste_4881","books":[]}
+[32mINFO    [0m utils.logger:test_create_user.py:52 ✅ Usuário registrado com sucesso na API!

@@ -1,0 +1,19 @@
+2025-02-12 10:46:03,520 - DEBUG - 🔍 Antes do teste: Token Atual = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMzc3NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3OTYwfQ.bhpcdz20suWCDIxhVEI2j64sFOzcInSkMGCoDgTx_rs
+2025-02-12 10:46:03,522 - DEBUG - Adding providers for fixture 'pytestbdd_stepimpl_given_que estou autenticado na API': [<FixtureDef argname='pytestbdd_stepdef_given_que estou autenticado na API' scope='function' baseid='tests/api/test_reservation.py'>, <FixtureDef argname='pytestbdd_stepdef_given_que estou autenticado na API_1' scope='function' baseid='tests/api/test_reservation.py'>]
+2025-02-12 10:46:03,522 - DEBUG - 🔐 Verificando autenticação do usuário... ID: 93681ecc-deac-435a-b8c6-67c2084251ad, Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMzc3NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3OTYwfQ.bhpcdz20suWCDIxhVEI2j64sFOzcInSkMGCoDgTx_rs
+2025-02-12 10:46:03,522 - DEBUG - 🔍 Verificando se o usuário 93681ecc-deac-435a-b8c6-67c2084251ad está autorizado...
+2025-02-12 10:46:03,524 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:46:04,132 - DEBUG - https://demoqa.com:443 "GET /Account/v1/User/93681ecc-deac-435a-b8c6-67c2084251ad HTTP/1.1" 401 48
+2025-02-12 10:46:04,133 - DEBUG - 📥 Resposta da API: 401 - {"code":"1200","message":"User not authorized!"}
+2025-02-12 10:46:04,133 - DEBUG - 📥 Resposta da API: 401 - {"code":"1200","message":"User not authorized!"}
+2025-02-12 10:46:04,133 - DEBUG - 🔄 Token inválido. Gerando um novo...
+2025-02-12 10:46:04,134 - DEBUG - 📤 Gerando token para usuário: usuario_teste_3774
+2025-02-12 10:46:04,136 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:46:05,039 - DEBUG - https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 288
+2025-02-12 10:46:05,040 - DEBUG - 📥 Resposta da API ao gerar token: 200 - {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMzc3NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3OTY0fQ.dtrd0BC7giFOScVqJXH6lxbvRmDSMHjvPBeiPgzgDa4","expires":"2025-02-19T13:46:04.539Z","status":"Success","result":"User authorized successfully."}
+2025-02-12 10:46:05,040 - DEBUG - ✅ Token gerado com sucesso: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMzc3NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3OTY0fQ.dtrd0BC7giFOScVqJXH6lxbvRmDSMHjvPBeiPgzgDa4
+2025-02-12 10:46:05,041 - DEBUG - ✅ Novo Token Gerado: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMzc3NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3OTY0fQ.dtrd0BC7giFOScVqJXH6lxbvRmDSMHjvPBeiPgzgDa4
+2025-02-12 10:46:05,041 - DEBUG - 🔍 Verificando se o usuário 93681ecc-deac-435a-b8c6-67c2084251ad está autorizado...
+2025-02-12 10:46:05,043 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:46:06,003 - DEBUG - https://demoqa.com:443 "GET /Account/v1/User/93681ecc-deac-435a-b8c6-67c2084251ad HTTP/1.1" 401 48
+2025-02-12 10:46:06,004 - DEBUG - 📥 Resposta da API: 401 - {"code":"1200","message":"User not authorized!"}

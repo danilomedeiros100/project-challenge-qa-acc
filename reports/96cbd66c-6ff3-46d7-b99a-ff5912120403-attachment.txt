@@ -1,0 +1,30 @@
+12:19:54 | DEBUG | 👤 Criando novo usuário para o teste: usuario_teste_4781
+12:19:54 | DEBUG | Starting new HTTPS connection (1): demoqa.com:443
+12:19:54 | DEBUG | https://demoqa.com:443 "POST /Account/v1/User HTTP/1.1" 201 92
+12:19:54 | DEBUG | Starting new HTTPS connection (1): demoqa.com:443
+12:19:55 | DEBUG | https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 288
+12:19:55 | DEBUG | Starting new HTTPS connection (1): demoqa.com:443
+12:19:56 | DEBUG | https://demoqa.com:443 "POST /Account/v1/Authorized HTTP/1.1" 200 4
+12:19:56 | DEBUG | ✅ Usuário criado e autorizado com sucesso. ID: 61004431-dd90-4930-bcab-882f732bd094, Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNDc4MSIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzczNTk1fQ.LgzZoKSI4AJUDMopf6_StKXCTM7Q92LGysakqt0bQuU
+12:19:56 | DEBUG | Adding providers for fixture 'pytestbdd_stepimpl_given_que eu tenho um usuário criado e autenticado': [<FixtureDef argname='pytestbdd_stepdef_given_que eu tenho um usuário criado e autenticado' scope='function' baseid='tests/api/test_user_details.py'>]
+12:19:56 | INFO | 🟢 [INÍCIO] Criando e autenticando usuário para consulta de detalhes
+12:19:56 | DEBUG | Starting new HTTPS connection (1): demoqa.com:443
+12:19:56 | DEBUG | https://demoqa.com:443 "POST /Account/v1/User HTTP/1.1" 201 92
+12:19:56 | INFO | ✅ Usuário criado com sucesso! ID: 96c0575e-e8f0-4241-b9fb-b597f88b2654
+12:19:56 | DEBUG | Starting new HTTPS connection (1): demoqa.com:443
+12:19:57 | DEBUG | https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 288
+12:19:57 | INFO | 🔑 Token gerado com sucesso: eyJhbGciOiJIUzI1NiIs...
+12:19:57 | DEBUG | Adding providers for fixture 'pytestbdd_stepimpl_when_eu envio uma requisição para obter os detalhes do usuário': [<FixtureDef argname='pytestbdd_stepdef_when_eu envio uma requisição para obter os detalhes do usuário' scope='function' baseid='tests/api/test_user_details.py'>]
+12:19:57 | INFO | 🔍 Solicitando detalhes do usuário...
+12:19:57 | DEBUG | Starting new HTTPS connection (1): demoqa.com:443
+12:19:58 | DEBUG | https://demoqa.com:443 "GET /Account/v1/User/96c0575e-e8f0-4241-b9fb-b597f88b2654 HTTP/1.1" 200 92
+12:19:58 | DEBUG | 📥 Resposta da API ao obter detalhes do usuário: 200 - {"userId":"96c0575e-e8f0-4241-b9fb-b597f88b2654","username":"usuario_teste_1027","books":[]}
+12:19:58 | INFO | 📤 Resposta recebida da API (200):
+{
+    "userId": "96c0575e-e8f0-4241-b9fb-b597f88b2654",
+    "username": "usuario_teste_1027",
+    "books": []
+}
+12:19:58 | DEBUG | Adding providers for fixture 'pytestbdd_stepimpl_then_a API deve retornar os detalhes corretos do usuário': [<FixtureDef argname='pytestbdd_stepdef_then_a API deve retornar os detalhes corretos do usuário' scope='function' baseid='tests/api/test_user_details.py'>]
+12:19:58 | INFO | ✅ Validando resposta da API para detalhes do usuário...
+12:19:58 | INFO | ✅ Os detalhes do usuário estão corretos!

@@ -1,0 +1,17 @@
+2025-02-12 10:56:09,795 - DEBUG - 🔍 Antes do teste: Token Atual = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNDI1NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY4NTY2fQ.pYzAO0necGNBSPaJ8lGzfKdjOL5MUq7AhBKSmes7o3g
+2025-02-12 10:56:09,796 - DEBUG - Adding providers for fixture 'pytestbdd_stepimpl_given_que estou autenticado na API': [<FixtureDef argname='pytestbdd_stepdef_given_que estou autenticado na API' scope='function' baseid='tests/api/test_reservation.py'>]
+2025-02-12 10:56:09,797 - DEBUG - 🔐 Verificando autenticação do usuário... ID: 0d374e1e-47c8-4640-9623-414e2c8a4442, Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNDI1NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY4NTY2fQ.pYzAO0necGNBSPaJ8lGzfKdjOL5MUq7AhBKSmes7o3g
+2025-02-12 10:56:09,797 - DEBUG - 🔍 Verificando se o usuário 0d374e1e-47c8-4640-9623-414e2c8a4442 está autorizado...
+2025-02-12 10:56:09,799 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:56:10,392 - DEBUG - https://demoqa.com:443 "GET /Account/v1/User/0d374e1e-47c8-4640-9623-414e2c8a4442 HTTP/1.1" 401 48
+2025-02-12 10:56:10,393 - DEBUG - 📥 Resposta da API: 401 - {"code":"1200","message":"User not authorized!"}
+2025-02-12 10:56:10,394 - DEBUG - 🔄 Token inválido. Tentando regeneração...
+2025-02-12 10:56:10,394 - DEBUG - 📤 Gerando token para usuário: usuario_teste_4254
+2025-02-12 10:56:10,396 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:56:11,375 - DEBUG - https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 288
+2025-02-12 10:56:11,376 - DEBUG - 📥 Resposta da API ao gerar token: 200 - {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNDI1NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY4NTcwfQ.wsRPz5jp_4rHaHWfY1fK7nZUS8T04SUy7NpjN8ffnCQ","expires":"2025-02-19T13:56:10.799Z","status":"Success","result":"User authorized successfully."}
+2025-02-12 10:56:11,377 - DEBUG - ✅ Token gerado com sucesso: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNDI1NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY4NTcwfQ.wsRPz5jp_4rHaHWfY1fK7nZUS8T04SUy7NpjN8ffnCQ
+2025-02-12 10:56:11,377 - DEBUG - ✅ Novo Token Gerado: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNDI1NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY4NTcwfQ.wsRPz5jp_4rHaHWfY1fK7nZUS8T04SUy7NpjN8ffnCQ
+2025-02-12 10:56:11,380 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:56:12,399 - DEBUG - https://demoqa.com:443 "GET /Account/v1/User/0d374e1e-47c8-4640-9623-414e2c8a4442 HTTP/1.1" 401 48
+2025-02-12 10:56:12,400 - DEBUG - ❌ O ID do usuário pode estar incorreto após a regeneração do token.

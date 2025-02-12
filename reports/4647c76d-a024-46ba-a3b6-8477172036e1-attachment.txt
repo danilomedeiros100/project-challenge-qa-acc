@@ -1,0 +1,13 @@
+2025-02-12 10:41:30,726 - DEBUG - 🔍 Antes do teste: Token Atual = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMjgxNSIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3Njg3fQ.DhUwQzS7yWNRprf4mmSPge9EEBsOvVi78Lpdrq0CvL8
+2025-02-12 10:41:30,727 - DEBUG - Adding providers for fixture 'pytestbdd_stepimpl_given_que estou autenticado na API': [<FixtureDef argname='pytestbdd_stepdef_given_que estou autenticado na API' scope='function' baseid='tests/api/test_reservation.py'>]
+2025-02-12 10:41:30,728 - DEBUG - 🔐 Verificando autenticação do usuário... ID: 5652b048-0346-48fa-b6c1-209d0a31aa45, Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMjgxNSIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3Njg3fQ.DhUwQzS7yWNRprf4mmSPge9EEBsOvVi78Lpdrq0CvL8
+2025-02-12 10:41:30,728 - DEBUG - 🔍 Verificando se o usuário 5652b048-0346-48fa-b6c1-209d0a31aa45 está autorizado...
+2025-02-12 10:41:30,730 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:41:31,333 - DEBUG - https://demoqa.com:443 "GET /Account/v1/User/5652b048-0346-48fa-b6c1-209d0a31aa45 HTTP/1.1" 401 48
+2025-02-12 10:41:31,334 - DEBUG - 📥 Resposta da API: 401 - {"code":"1200","message":"User not authorized!"}
+2025-02-12 10:41:31,334 - DEBUG - 🔄 Token inválido. Gerando um novo...
+2025-02-12 10:41:31,334 - DEBUG - 📤 Gerando token para usuário: 5652b048-0346-48fa-b6c1-209d0a31aa45
+2025-02-12 10:41:31,336 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:41:32,279 - DEBUG - https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 85
+2025-02-12 10:41:32,280 - DEBUG - 📥 Resposta da API ao gerar token: 200 - {"token":null,"expires":null,"status":"Failed","result":"User authorization failed."}
+2025-02-12 10:41:32,280 - ERROR - ❌ Erro: API retornou resposta 200 mas sem token válido!

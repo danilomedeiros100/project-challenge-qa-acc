@@ -1,0 +1,4 @@
+2025-02-12 10:39:08,709 - DEBUG - 👤 Criando usuário de teste: usuario_teste_7665
+2025-02-12 10:39:08,713 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:39:09,251 - DEBUG - https://demoqa.com:443 "POST /Account/v1/User HTTP/1.1" 406 40
+2025-02-12 10:39:09,252 - DEBUG - ⚠️ Usuário já existe ou erro ao criar: {"code":"1204","message":"User exists!"}

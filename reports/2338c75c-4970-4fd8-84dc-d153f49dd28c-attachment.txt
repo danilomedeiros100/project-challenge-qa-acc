@@ -1,0 +1,8 @@
+2025-02-12 10:57:46,040 - DEBUG - 👤 Criando usuário de teste: usuario_teste_3973
+2025-02-12 10:57:46,044 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:57:46,813 - DEBUG - https://demoqa.com:443 "POST /Account/v1/User HTTP/1.1" 201 92
+2025-02-12 10:57:46,815 - DEBUG - 📤 Gerando token para usuário: usuario_teste_3973
+2025-02-12 10:57:46,818 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:57:47,734 - DEBUG - https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 288
+2025-02-12 10:57:47,736 - DEBUG - 📥 Resposta da API ao gerar token: 200 - {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMzk3MyIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY4NjY3fQ.LTYK5fwzEJLa0F5SJjc--VyTv32Yi2qJcYT8VhryTH0","expires":"2025-02-19T13:57:47.211Z","status":"Success","result":"User authorized successfully."}
+2025-02-12 10:57:47,736 - DEBUG - ✅ Token gerado com sucesso: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMzk3MyIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY4NjY3fQ.LTYK5fwzEJLa0F5SJjc--VyTv32Yi2qJcYT8VhryTH0

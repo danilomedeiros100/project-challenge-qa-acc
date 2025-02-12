@@ -1,0 +1,20 @@
+2025-02-12 10:45:59,121 - DEBUG - 👤 Criando usuário de teste: usuario_teste_3774
+2025-02-12 10:45:59,124 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:45:59,934 - DEBUG - https://demoqa.com:443 "POST /Account/v1/User HTTP/1.1" 201 92
+2025-02-12 10:45:59,936 - DEBUG - 📤 Gerando token para usuário: usuario_teste_3774
+2025-02-12 10:45:59,938 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:46:00,855 - DEBUG - https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 288
+2025-02-12 10:46:00,856 - DEBUG - 📥 Resposta da API ao gerar token: 200 - {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMzc3NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3OTYwfQ.bhpcdz20suWCDIxhVEI2j64sFOzcInSkMGCoDgTx_rs","expires":"2025-02-19T13:46:00.344Z","status":"Success","result":"User authorized successfully."}
+2025-02-12 10:46:00,857 - DEBUG - ✅ Token gerado com sucesso: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMzc3NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3OTYwfQ.bhpcdz20suWCDIxhVEI2j64sFOzcInSkMGCoDgTx_rs
+2025-02-12 10:46:00,857 - DEBUG - ✅ Usuário criado e autorizado com sucesso. ID: 9f77a58f-a0e2-4aaf-a5cd-3b64819bbbe0, Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMzc3NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3OTYwfQ.bhpcdz20suWCDIxhVEI2j64sFOzcInSkMGCoDgTx_rs
+2025-02-12 10:46:00,859 - DEBUG - 🔍 Antes do teste: Token Atual = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMzc3NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3OTYwfQ.bhpcdz20suWCDIxhVEI2j64sFOzcInSkMGCoDgTx_rs
+2025-02-12 10:46:00,861 - DEBUG - Adding providers for fixture 'pytestbdd_stepimpl_given_que eu tenho um usuário criado': [<FixtureDef argname='pytestbdd_stepdef_given_que eu tenho um usuário criado' scope='function' baseid='tests/api/test_auth.py'>]
+2025-02-12 10:46:00,863 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:46:01,551 - DEBUG - https://demoqa.com:443 "POST /Account/v1/User HTTP/1.1" 201 92
+2025-02-12 10:46:01,553 - DEBUG - Adding providers for fixture 'pytestbdd_stepimpl_when_envio uma requisição para autenticar o usuário': [<FixtureDef argname='pytestbdd_stepdef_when_envio uma requisição para autenticar o usuário' scope='function' baseid='tests/api/test_auth.py'>]
+2025-02-12 10:46:01,555 - DEBUG - 📤 Gerando token para usuário: usuario_teste_1318
+2025-02-12 10:46:01,557 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:46:02,354 - DEBUG - https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 288
+2025-02-12 10:46:02,355 - DEBUG - 📥 Resposta da API ao gerar token: 200 - {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMTMxOCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3OTYxfQ.fV8GLIzmm8mUsW8mvtITePSumUHvtPPTxHJ3kM8gY78","expires":"2025-02-19T13:46:01.961Z","status":"Success","result":"User authorized successfully."}
+2025-02-12 10:46:02,355 - DEBUG - ✅ Token gerado com sucesso: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMTMxOCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3OTYxfQ.fV8GLIzmm8mUsW8mvtITePSumUHvtPPTxHJ3kM8gY78
+2025-02-12 10:46:02,356 - DEBUG - Adding providers for fixture 'pytestbdd_stepimpl_then_a API deve retornar um token de autenticação': [<FixtureDef argname='pytestbdd_stepdef_then_a API deve retornar um token de autenticação' scope='function' baseid='tests/api/test_auth.py'>]

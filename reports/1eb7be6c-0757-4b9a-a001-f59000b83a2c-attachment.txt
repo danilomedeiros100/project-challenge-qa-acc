@@ -1,0 +1,8 @@
+[35mDEBUG   [0m root:conftest.py:15 👤 Criando usuário de teste: usuario_teste_1659
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/User HTTP/1.1" 201 92
+[35mDEBUG   [0m root:api_client.py:20 📤 Gerando token para usuário: usuario_teste_1659
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 288
+[35mDEBUG   [0m root:api_client.py:24 📥 Resposta da API ao gerar token: 200 - {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMTY1OSIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3NDYxfQ.2bjAnh5WBWPG6xKwm6tAm_IB0VfrWRE9knDeEzxrLJI","expires":"2025-02-19T13:37:41.641Z","status":"Success","result":"User authorized successfully."}
+[35mDEBUG   [0m root:api_client.py:29 ✅ Token gerado com sucesso: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMTY1OSIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3NDYxfQ.2bjAnh5WBWPG6xKwm6tAm_IB0VfrWRE9knDeEzxrLJI

@@ -1,0 +1,13 @@
+[35mDEBUG   [0m root:conftest.py:46 🔍 Antes do teste: Token Atual = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNjE1NyIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3NTYxfQ.fzpJEefEIms6x0RNJhcGasLzQTGKuGUbCHooDTe2IJw
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_given_que estou autenticado na API': [<FixtureDef argname='pytestbdd_stepdef_given_que estou autenticado na API' scope='function' baseid='tests/api/test_reservation.py'>]
+[35mDEBUG   [0m root:test_reservation.py:11 🔐 Verificando autenticação do usuário... ID: 622161c6-e5b8-491b-92b6-329a8eef6c70, Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNjE1NyIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3NTYxfQ.fzpJEefEIms6x0RNJhcGasLzQTGKuGUbCHooDTe2IJw
+[35mDEBUG   [0m root:api_client.py:59 🔍 Verificando se o usuário 622161c6-e5b8-491b-92b6-329a8eef6c70 está autorizado...
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "GET /Account/v1/User/622161c6-e5b8-491b-92b6-329a8eef6c70 HTTP/1.1" 401 48
+[35mDEBUG   [0m root:api_client.py:61 📥 Resposta da API: 401 - {"code":"1200","message":"User not authorized!"}
+[35mDEBUG   [0m root:test_reservation.py:16 🔄 Token inválido. Gerando um novo...
+[35mDEBUG   [0m root:api_client.py:20 📤 Gerando token para usuário: 622161c6-e5b8-491b-92b6-329a8eef6c70
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 85
+[35mDEBUG   [0m root:api_client.py:24 📥 Resposta da API ao gerar token: 200 - {"token":null,"expires":null,"status":"Failed","result":"User authorization failed."}
+[31m[1mERROR   [0m root:api_client.py:32 ❌ Erro: API retornou resposta 200 mas sem token válido!

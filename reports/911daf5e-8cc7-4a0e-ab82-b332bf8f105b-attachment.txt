@@ -1,0 +1,7 @@
+2025-02-12 10:46:02,853 - DEBUG - 🔍 Antes do teste: Token Atual = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfMzc3NCIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY3OTYwfQ.bhpcdz20suWCDIxhVEI2j64sFOzcInSkMGCoDgTx_rs
+2025-02-12 10:46:02,855 - DEBUG - Adding providers for fixture 'pytestbdd_stepimpl_given_que eu tenho um nome de usuário e uma senha válidos': [<FixtureDef argname='pytestbdd_stepdef_given_que eu tenho um nome de usuário e uma senha válidos' scope='function' baseid='tests/api/test_create_user.py'>]
+2025-02-12 10:46:02,856 - DEBUG - Adding providers for fixture 'pytestbdd_stepimpl_when_envio uma requisição para criar um usuário': [<FixtureDef argname='pytestbdd_stepdef_when_envio uma requisição para criar um usuário' scope='function' baseid='tests/api/test_create_user.py'>]
+2025-02-12 10:46:02,858 - DEBUG - Starting new HTTPS connection (1): demoqa.com:443
+2025-02-12 10:46:03,505 - DEBUG - https://demoqa.com:443 "POST /Account/v1/User HTTP/1.1" 201 92
+2025-02-12 10:46:03,508 - DEBUG - Adding providers for fixture 'pytestbdd_stepimpl_then_a API deve retornar um status 201': [<FixtureDef argname='pytestbdd_stepdef_then_a API deve retornar um status 201' scope='function' baseid='tests/api/test_create_user.py'>]
+2025-02-12 10:46:03,509 - DEBUG - Adding providers for fixture 'pytestbdd_stepimpl_then_o usuário deve ser criado com sucesso': [<FixtureDef argname='pytestbdd_stepdef_then_o usuário deve ser criado com sucesso' scope='function' baseid='tests/api/test_create_user.py'>]

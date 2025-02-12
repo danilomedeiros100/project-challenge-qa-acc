@@ -1,0 +1,14 @@
+[35mDEBUG   [0m pytest_bdd.scenario:scenario.py:150 Adding providers for fixture 'pytestbdd_stepimpl_given_que estou autenticado na API': [<FixtureDef argname='pytestbdd_stepdef_given_que estou autenticado na API' scope='function' baseid='tests/api/test_reservation.py'>]
+[35mDEBUG   [0m root:test_reservation.py:13 🔐 Verificando autenticação do usuário... ID: 5672da4f-7683-4dd0-88bc-8210de5dbe27, Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfOTcyNSIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY5OTA4fQ.Jjv9tGnRjk3-yFmxTYqUF0ptLNnApovqlDgtgArPaUw
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/Authorized HTTP/1.1" 200 4
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "GET /Account/v1/User/5672da4f-7683-4dd0-88bc-8210de5dbe27 HTTP/1.1" 401 48
+[35mDEBUG   [0m root:api_client.py:35 📥 Resposta da API ao obter detalhes do usuário: 401 - {"code":"1200","message":"User not authorized!"}
+[35mDEBUG   [0m root:test_reservation.py:23 🔄 Tentando regenerar token antes de verificar usuário...
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "POST /Account/v1/GenerateToken HTTP/1.1" 200 288
+[35mDEBUG   [0m root:test_reservation.py:31 ✅ Novo Token Gerado: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InVzdWFyaW9fdGVzdGVfNTM0NiIsInBhc3N3b3JkIjoiVGVzdGVAMTIzIiwiaWF0IjoxNzM5MzY5OTEzfQ.Z7q7ppwEBzA1cm1sYjXX-Q2EchYFpx9Re3RFqlVtw-k
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:1049 Starting new HTTPS connection (1): demoqa.com:443
+[35mDEBUG   [0m urllib3.connectionpool:connectionpool.py:544 https://demoqa.com:443 "GET /Account/v1/User/5672da4f-7683-4dd0-88bc-8210de5dbe27 HTTP/1.1" 401 48
+[35mDEBUG   [0m root:api_client.py:35 📥 Resposta da API ao obter detalhes do usuário: 401 - {"code":"1200","message":"User not authorized!"}
