@@ -39,8 +39,9 @@ project-challenge-qa-acc/
 ### 🛠️ Instalação no **Mac/Linux**
 ```bash
 # Clonar o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git https://github.com/danilomedeiros100/project-challenge-qa-acc.git
+
+cd project-challenge-qa-acc
 
 # Criar ambiente virtual
 python3 -m venv venv
