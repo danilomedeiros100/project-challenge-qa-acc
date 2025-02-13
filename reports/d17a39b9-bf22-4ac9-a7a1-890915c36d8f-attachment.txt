@@ -1,0 +1,16 @@
+🔄 Ordem Inicial: ['One', 'Two', 'Three', 'Four', 'Five', 'Six']
+🎯 Movendo Six para posição 0
+🔍 Nova Ordem Após Mover Six: ['Six', 'One', 'Two', 'Three', 'Four', 'Five']
+🎯 Movendo Five para posição 1
+🔍 Nova Ordem Após Mover Five: ['Six', 'Five', 'One', 'Two', 'Three', 'Four']
+🎯 Movendo Four para posição 2
+🔍 Nova Ordem Após Mover Four: ['Six', 'Five', 'Four', 'One', 'Two', 'Three']
+🎯 Movendo Three para posição 3
+🔍 Nova Ordem Após Mover Three: ['Six', 'Five', 'Four', 'Three', 'One', 'Two']
+🎯 Movendo Two para posição 4
+🔍 Nova Ordem Após Mover Two: ['Six', 'Five', 'Four', 'Three', 'Two', 'One']
+🔍 Ordem Atual na UI: ['Six', 'Five', 'Four', 'Three', 'Two', 'One']
+✅ Ordem Esperada: ['Six', 'Five', 'Four', 'Three', 'Two', 'One']
+✅ Elementos reordenados para ordem decrescente!
+🔍 Ordem Atual na UI: ['Six', 'Five', 'Four', 'Three', 'Two', 'One']
+✅ Ordem Esperada: ['Six', 'Five', 'Four', 'Three', 'Two', 'One']

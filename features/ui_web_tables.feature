@@ -1,5 +1,5 @@
 Feature: Testar Web Tables
-@sucesso
+
   Scenario: Criar, editar e excluir um registro com sucesso
     Given que estou na página "Web Tables"
     When crio um novo registro
@@ -9,7 +9,7 @@ Feature: Testar Web Tables
     When deleto o registro
     Then o registro não deve mais estar na tabela
 
-@sucesso
+
   Scenario: Criar, validar e excluir múltiplos registros dinamicamente
     Given que estou na página "Web Tables"
     When crio 12 novos registros

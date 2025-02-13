@@ -1,0 +1,3 @@
+🔍 Chaves no registro gerado: dict_keys(['first_name', 'last_name', 'email', 'age', 'salary', 'department'])
+📌 Registro salvo para validação: {'first_name': 'Steven', 'last_name': 'Wells', 'email': 'lutzjesse@example.net', 'age': '46', 'salary': '35020', 'department': 'Psychologist, forensic'}
+📌 Verificando registro salvo: {'first_name': 'Steven', 'last_name': 'Wells', 'email': 'lutzjesse@example.net', 'age': '46', 'salary': '35020', 'department': 'Psychologist, forensic'}

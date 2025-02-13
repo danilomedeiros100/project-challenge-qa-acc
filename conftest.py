@@ -8,6 +8,7 @@ from pages.form_page import FormPage
 import pytest
 import logging
 
+from pages.progress_bar_page import ProgressBarPage
 from pages.web_tables_page import WebTablesPage
 from utils.api_client import APIClient
 from utils.data_generator import generate_username, get_default_password
@@ -74,3 +75,16 @@ def form_page(browser):
     """Retorna uma instância da página do formulário"""
     page = FormPage(browser)
     return page
+
+@pytest.fixture
+def progress_bar_page(browser):
+    """Inicializa a página Progress Bar"""
+    return ProgressBarPage(browser)
+
+import pytest
+from pages.sortable_page import SortablePage
+
+@pytest.fixture
+def sortable_page(browser):
+    """Inicializa a página Sortable."""
+    return SortablePage(browser)
