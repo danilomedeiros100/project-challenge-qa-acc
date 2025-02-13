@@ -1,114 +1,172 @@
+import time
+
+from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
-import time
+
 
 class WebTablesPage:
+    """Classe para interagir com a página Web Tables"""
+
+    URL = "https://demoqa.com/webtables"
+
+    # 📌 Seletores de elementos
+    ADD_BUTTON = (By.ID, "addNewRecordButton")
+    TABLE_ROWS = (By.CLASS_NAME, "rt-tr-group")
+    DELETE_BUTTON = (By.XPATH, "//span[@title='Delete']")
+    EDIT_BUTTON = (By.XPATH, "//span[@title='Edit']")
+
+    # Campos do formulário
+    FIRST_NAME_INPUT = (By.ID, "firstName")
+    LAST_NAME_INPUT = (By.ID, "lastName")
+    EMAIL_INPUT = (By.ID, "userEmail")
+    AGE_INPUT = (By.ID, "age")
+    SALARY_INPUT = (By.ID, "salary")
+    DEPARTMENT_INPUT = (By.ID, "department")
+    SUBMIT_BUTTON = (By.ID, "submit")
+    PAGE_TITLE = (By.XPATH, "//h1[contains(text(), 'Web Tables')]")  # Verifica se o título "Web Tables" está presente
+    ADD_BUTTON = (By.ID, "addNewRecordButton")
+
     def __init__(self, driver):
         self.driver = driver
-        self.url = "https://demoqa.com/webtables"
-
-    # Locators
-    ADD_BUTTON = (By.ID, "addNewRecordButton")
-    FIRST_NAME = (By.ID, "firstName")
-    LAST_NAME = (By.ID, "lastName")
-    EMAIL = (By.ID, "userEmail")
-    AGE = (By.ID, "age")
-    SALARY = (By.ID, "salary")
-    DEPARTMENT = (By.ID, "department")
-    SUBMIT_BUTTON = (By.ID, "submit")
-    TABLE_ROWS = (By.XPATH, "//div[@class='rt-tr-group']")
-    DELETE_BUTTONS = (By.XPATH, "//span[contains(@id, 'delete-record')]")
 
     def open(self):
-        """Abre a página de Web Tables"""
-        self.driver.get(self.url)
+        """Abre a página Web Tables"""
+        self.driver.get(self.URL)
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(self.PAGE_TITLE))
 
-    def add_new_record(self, first_name, last_name, email, age, salary, department):
-        """Adiciona um novo registro à tabela"""
-        WebDriverWait(self.driver, 5).until(
-            EC.element_to_be_clickable(self.ADD_BUTTON)
-        ).click()
+    def is_loaded(self):
+        """Verifica se a página carregou corretamente verificando o botão de adicionar registro"""
+        return bool(WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(self.ADD_BUTTON)))
 
-        self.fill_text_field(self.FIRST_NAME, first_name)
-        self.fill_text_field(self.LAST_NAME, last_name)
-        self.fill_text_field(self.EMAIL, email)
-        self.fill_text_field(self.AGE, age)
-        self.fill_text_field(self.SALARY, salary)
-        self.fill_text_field(self.DEPARTMENT, department)
+    def open_add_record_modal(self):
+        """Clica no botão ADD para abrir o formulário de novo registro e aguarda a abertura do modal"""
+        add_button = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.ADD_BUTTON))
+        add_button.click()
 
-        WebDriverWait(self.driver, 5).until(
-            EC.element_to_be_clickable(self.SUBMIT_BUTTON)
-        ).click()
+        # Aguarda o modal aparecer completamente antes de tentar preenchê-lo
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.FIRST_NAME_INPUT))
+        time.sleep(1)  # 🔹 Adiciona um pequeno delay para evitar `StaleElementException`
 
-    def fill_text_field(self, locator, value):
-        """Preenche um campo de texto"""
-        field = WebDriverWait(self.driver, 5).until(
-            EC.element_to_be_clickable(locator)
-        )
-        field.clear()
-        field.send_keys(value)
+    def fill_registration_form(self, first_name, last_name, email, age, salary, department):
+        """Preenche o formulário de registro"""
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.FIRST_NAME_INPUT)).send_keys(
+            first_name)
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.LAST_NAME_INPUT)).send_keys(
+            last_name)
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.EMAIL_INPUT)).send_keys(email)
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.AGE_INPUT)).send_keys(age)
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.SALARY_INPUT)).send_keys(salary)
+        WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(self.DEPARTMENT_INPUT)).send_keys(
+            department)
 
-    def count_table_rows(self):
-        """Conta o número de linhas de dados na tabela, ignorando o placeholder 'No rows found'"""
+    def submit_registration(self):
+        """Clica no botão de envio do formulário"""
+        submit_button = WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.SUBMIT_BUTTON))
+        submit_button.click()
+
+        # Aguarda o modal ser fechado
+        WebDriverWait(self.driver, 5).until_not(EC.presence_of_element_located(self.FIRST_NAME_INPUT))
+
+    def is_record_present(self, record):
+        """Verifica se um registro específico está presente na tabela"""
+        rows = self.driver.find_elements(*self.TABLE_ROWS)
+        for row in rows:
+            if record["first_name"] in row.text and record["last_name"] in row.text:
+                return True
+        return False
+
+    def is_table_empty(self):
+        """Verifica se a tabela está vazia garantindo que a mensagem 'No rows found' esteja presente"""
         try:
-            # Verifica se a mensagem "No rows found" está presente
-            no_rows_element = self.driver.find_elements(By.XPATH, "//div[contains(text(), 'No rows found')]")
-            if no_rows_element:
-                return 0  # Se a mensagem existir, a tabela está vazia
-
-            # Caso contrário, conta as linhas normalmente
-            rows = self.driver.find_elements(By.XPATH, "//div[contains(@class, 'rt-tr-group')]")
-            return len(rows)
-        except Exception as e:
-            print(f"Erro ao contar linhas da tabela: {e}")
-            return -1
+            WebDriverWait(self.driver, 5).until(
+                lambda driver: len(driver.find_elements(*self.TABLE_ROWS)) == 0 or self.is_no_data_message_present()
+            )
+            return True
+        except:
+            return False
 
     def delete_all_records(self):
-        """Exclui todos os registros da tabela"""
+        """Remove todos os registros da tabela de forma extremamente rápida."""
+
+        # Sai imediatamente se a tabela já estiver vazia
+        if self.is_no_data_message_present():
+            return
+
         while True:
-            try:
-                delete_buttons = WebDriverWait(self.driver, 5).until(
-                    EC.presence_of_all_elements_located((By.CSS_SELECTOR, ".action-buttons span[title='Delete']"))
-                )
+            delete_buttons = self.driver.find_elements(*self.DELETE_BUTTON)
 
-                if not delete_buttons:
-                    break  # Sai do loop se não houver mais registros
+            if not delete_buttons:
+                break
 
-                for button in delete_buttons:
-                    try:
-                        self.driver.execute_script("arguments[0].scrollIntoView();", button)
-                        WebDriverWait(self.driver, 2).until(EC.element_to_be_clickable(button)).click()
-                    except:
-                        pass  # Ignora se um elemento específico não puder ser clicado
+            for button in delete_buttons:
+                try:
+                    self.driver.execute_script("arguments[0].click();", button)  # 🔹 Clique forçado via JavaScript
 
-            except:
-                break  # Sai do loop se os elementos não forem encontrados
+                    WebDriverWait(self.driver, 0.5).until(EC.staleness_of(button))
 
-    def set_page_size(self, size="25"):
-        """Altera a quantidade de registros exibidos na tabela"""
-        dropdown = WebDriverWait(self.driver, 5).until(
-            EC.element_to_be_clickable((By.XPATH, "//select[@aria-label='rows per page']"))
+                    if self.is_no_data_message_present():
+                        return
+                except:
+                    continue  # Continua mesmo se um clique falhar
+
+    def edit_first_record(self, new_name):
+        """Edita o primeiro registro da tabela alterando o nome"""
+        self.driver.find_element(*self.EDIT_BUTTON).click()  # Clica no botão de edição
+        first_name_field = self.driver.find_element(*self.FIRST_NAME_INPUT)
+        first_name_field.clear()
+        first_name_field.send_keys(new_name)
+        self.driver.find_element(*self.SUBMIT_BUTTON).click()  # Confirma a edição
+
+    def update_first_name(self, new_name):
+        """Altera o campo First Name no formulário de edição"""
+        first_name_field = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located(self.FIRST_NAME_INPUT))
+        first_name_field.clear()
+        first_name_field.send_keys(new_name)
+
+    def delete_first_record(self):
+        """Exclui o primeiro registro da tabela"""
+        delete_button = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable(self.DELETE_BUTTON))
+        delete_button.click()
+        WebDriverWait(self.driver, 3).until(EC.staleness_of(delete_button))
+
+    def click_add_button(self):
+        """Clica no botão 'Add' para abrir o modal de registro"""
+        WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.ADD_BUTTON)).click()
+
+    def change_table_display_count(self, count):
+        """Altera a exibição de registros por página forçando o clique via JavaScript."""
+        dropdown = WebDriverWait(self.driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, "select[aria-label='rows per page']"))
         )
-        dropdown.click()
 
+        self.driver.execute_script("arguments[0].click();", dropdown)
+
+        option_xpath = f"//option[@value='{count}']"
         option = WebDriverWait(self.driver, 5).until(
-            EC.element_to_be_clickable((By.XPATH, f"//option[@value='{size}']"))
+            EC.presence_of_element_located((By.XPATH, option_xpath))
         )
-        option.click()
 
-    def close_ads_if_present(self):
-        """Fecha anúncios que possam bloquear a interação"""
+        # 🔹 Força o clique via JavaScript no elemento desejado
+        self.driver.execute_script("arguments[0].click();", option)
+
+    def is_no_data_message_present(self):
+        """Verifica se a mensagem 'No rows found' está visível na tabela"""
         try:
-            iframe = WebDriverWait(self.driver, 2).until(
-                EC.presence_of_element_located((By.XPATH, "//iframe[contains(@id, 'google_ads_iframe')]"))
+            no_data_element = WebDriverWait(self.driver, 3).until(
+                EC.presence_of_element_located((By.CLASS_NAME, "rt-noData"))
             )
-            self.driver.switch_to.frame(iframe)
-            close_button = WebDriverWait(self.driver, 2).until(
-                EC.element_to_be_clickable((By.XPATH, "//button[contains(text(), 'Fechar')]"))
+            return no_data_element.is_displayed()
+        except:
+            return False
+
+    def is_modal_open(self):
+        """Verifica se o modal de registro está aberto"""
+        try:
+            WebDriverWait(self.driver, 5).until(
+                EC.visibility_of_element_located(self.FIRST_NAME_INPUT)
             )
-            close_button.click()
-            self.driver.switch_to.default_content()
-        except Exception:
-            pass  # Se não houver anúncio, segue normalmente
+            return True
+        except TimeoutException:
+            return False

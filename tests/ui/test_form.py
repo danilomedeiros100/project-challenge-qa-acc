@@ -1,13 +1,9 @@
 import time
-
-import pytest
 from pytest_bdd import scenario, given, when, then
 from pages.form_page import FormPage
 from utils.data_generator import (
     generate_valid_test_data,
-    generate_incomplete_data,
-    generate_weak_password_data,
-    generate_mismatched_email_data
+
 )
 
 # Cenário 1: Submeter formulário com sucesso

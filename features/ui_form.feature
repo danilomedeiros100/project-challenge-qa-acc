@@ -1,5 +1,5 @@
 Feature: Testar o formulário de cadastro
-@sucesso
+
   Scenario: Submeter formulário com sucesso
     Given que estou na página do formulário
     When preencho todos os campos corretamente
@@ -7,7 +7,7 @@ Feature: Testar o formulário de cadastro
     Then devo ver a mensagem de sucesso
     And fecho o modal de sucesso
 
-@sucesso
+
   Scenario: Tentar submeter formulário sem preencher todos os campos
     Given que estou na página do formulário
     When tento submeter o formulário sem preencher todos os campos

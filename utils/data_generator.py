@@ -2,6 +2,7 @@ import random
 
 from faker import Faker
 
+
 faker = Faker()
 
 def generate_valid_test_data():
@@ -48,3 +49,16 @@ def generate_username():
 def get_default_password():
     """Retorna a senha padrão"""
     return "Teste@123"
+
+def generate_valid_web_tables_data():
+    """Gera dados válidos para o formulário Web Tables"""
+    fake = Faker()
+    return {
+        "first_name": fake.first_name(),
+        "last_name": fake.last_name(),
+        "email": fake.email(),
+        "age": str(random.randint(18, 65)),
+        "salary": str(random.randint(30000, 120000)),
+        "department": fake.job()
+    }
+print(generate_valid_web_tables_data())

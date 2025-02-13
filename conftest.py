@@ -7,6 +7,8 @@ from pages.form_page import FormPage
 
 import pytest
 import logging
+
+from pages.web_tables_page import WebTablesPage
 from utils.api_client import APIClient
 from utils.data_generator import generate_username, get_default_password
 
@@ -47,6 +49,13 @@ def authenticated_user():
     if not hasattr(pytest, "user_data"):
         pytest.fail("❌ `pytest.user_data` não foi inicializado corretamente!")
     return pytest.user_data
+
+@pytest.fixture
+def web_tables_page(browser):
+    """Retorna uma instância da página Web Tables"""
+    page = WebTablesPage(browser)
+    page.open()
+    return page
 
 @pytest.fixture
 def browser():
