@@ -1,5 +1,4 @@
 import requests
-
 from utils.logger import logger
 
 BASE_URL = "https://demoqa.com"
