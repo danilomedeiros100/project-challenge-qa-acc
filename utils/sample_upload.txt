@@ -1,0 +1,4 @@
+# Projeto: Automação de Testes com Pytest-BDD
+
+## 📌 Descrição do Projeto
+Este projeto realiza testes automatizados de API utilizando **Python, Pytest-BDD, Requests** e **Allure Reports**. Os testes validam a funcionalidade da API do **DemoQA**.

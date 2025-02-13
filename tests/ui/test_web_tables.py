@@ -1,6 +1,6 @@
 import pytest
 from pytest_bdd import given, when, then, scenarios
-
+import time
 from pages.web_tables_page import WebTablesPage
 
 
@@ -18,10 +18,6 @@ def acessar_pagina_web_tables(browser):
     """Abre a página Web Tables"""
     page = WebTablesPage(browser)
     page.open()
-    time.sleep(5)
-
-import time
-
 
 @then("todos os 12 registros devem estar na tabela")
 def validar_registros(web_tables_page):

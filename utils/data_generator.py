@@ -5,13 +5,17 @@ from faker import Faker
 faker = Faker()
 
 def generate_valid_test_data():
+    """Gera dados aleatórios válidos para preencher o formulário"""
     return {
         "first_name": faker.first_name(),
         "last_name": faker.last_name(),
         "email": faker.email(),
-        "mobile": str(faker.random_int(min=6000000000, max=9999999999)),
+        "gender": random.choice(["Male", "Female", "Other"]),
+        "mobile": f"{random.randint(6000000000, 9999999999)}",
         "subjects": "Maths",
         "address": faker.address().replace("\n", " "),
+        "state": "NCR",
+        "city": "Delhi"
     }
 
 def generate_weak_password_data():
@@ -20,8 +24,10 @@ def generate_weak_password_data():
     return data
 
 def generate_mismatched_email_data():
+    """Gera dados para testar e-mails diferentes"""
     data = generate_valid_test_data()
-    data["confirm_email"] = "wrong_email@example.com"
+    if "confirm_email" in data:
+        data["confirm_email"] = "wrong_email@example.com"  # Se o campo existir
     return data
 
 def generate_incomplete_data():
