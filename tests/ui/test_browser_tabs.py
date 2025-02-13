@@ -1,7 +1,5 @@
 import time
-
 from pytest_bdd import scenario, given, when, then
-
 from pages.browser_tabs_page import BrowserTabsPage
 
 

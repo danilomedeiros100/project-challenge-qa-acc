@@ -1,5 +1,4 @@
 import time
-
 from pytest_bdd import scenario, given, when, then
 from pages.alerts_page import AlertsPage
 

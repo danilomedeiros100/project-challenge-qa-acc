@@ -1,10 +1,7 @@
 import pytest
 from pytest_bdd import scenarios, given, when, then
-
 from pages.browser_windows_page import BrowserWindowsPage
-
 from pytest_bdd import given, when, then
-
 from utils.data_generator import generate_valid_test_data
 
 scenarios("../../features/ui_browser_windows.feature")
@@ -20,7 +17,6 @@ def test_data():
     return generate_valid_test_data()
 
 
-
 @given('que estou na página "Browser Windows"')
 def abrir_pagina_browser_windows(browser):
     """Abre a página de Browser Windows"""
@@ -33,6 +29,7 @@ def clicar_botao_nova_janela(browser):
     """Clica no botão para abrir uma nova janela"""
     page = BrowserWindowsPage(browser)
     page.click_new_window_button()
+
 
 @then('uma nova janela deve ser aberta com a mensagem "This is a sample page"')
 def validar_mensagem_nova_janela(browser):

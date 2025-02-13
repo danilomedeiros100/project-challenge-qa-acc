@@ -1,9 +1,7 @@
 import time
-import pytest
 from pytest_bdd import scenario, given, when, then
-from pages.progress_bar_page import ProgressBarPage
 
-# Cenário: Controlar o progresso da barra de progresso
+
 @scenario("../../features/ui_progress_bar.feature", "Controlar o progresso da barra de progresso")
 def test_progress_bar():
     pass

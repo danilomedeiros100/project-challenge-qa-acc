@@ -1,8 +1,7 @@
 import time
 import pytest
 from pytest_bdd import scenario, given, when, then
-from pages.web_tables_page import WebTablesPage
-from utils.data_generator import generate_valid_test_data, generate_valid_web_tables_data
+from utils.data_generator import  generate_valid_web_tables_data
 
 
 # Cenário 1: Criar, editar e excluir um registro com sucesso
@@ -28,7 +27,6 @@ def acessar_pagina_web_tables(browser, web_tables_page):
 
     # 🔹 Alterar para exibir 20 registros por página **logo após a remoção**
     web_tables_page.change_table_display_count(20)
-
 
 
 @when("crio um novo registro")
@@ -92,7 +90,7 @@ def validar_registro_excluido(web_tables_page):
     assert not web_tables_page.is_record_present(pytest.registro_atual), "O registro ainda está na tabela!"
 
 
-# =========== NOVO CENÁRIO: Criar, validar e excluir múltiplos registros ===========
+
 @when("crio 12 novos registros")
 def criar_multiplos_registros(web_tables_page):
     """Cria 12 novos registros dinamicamente"""

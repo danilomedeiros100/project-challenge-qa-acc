@@ -1,6 +1,5 @@
-import pytest
 from pytest_bdd import scenario, given, when, then
-from pages.sortable_page import SortablePage
+
 
 @scenario("../../features/ui_sortable.feature", "Ordenar elementos na lista Sortable em ordem decrescente")
 def test_ordenar_elementos():

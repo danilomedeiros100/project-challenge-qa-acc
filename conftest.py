@@ -1,13 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-import pytest
 from pages.form_page import FormPage
-
-
 import pytest
 import logging
-
 from pages.progress_bar_page import ProgressBarPage
 from pages.web_tables_page import WebTablesPage
 from utils.api_client import APIClient
