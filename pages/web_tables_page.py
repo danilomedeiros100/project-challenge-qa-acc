@@ -1,6 +1,7 @@
 import time
 from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -134,14 +135,20 @@ class WebTablesPage:
         """Clica no botão 'Add' para abrir o modal de registro"""
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable(self.ADD_BUTTON)).click()
 
-    def change_table_display_count(self, count):
-        """Altera a exibição de registros por página forçando o clique via JavaScript."""
-        dropdown = WebDriverWait(self.driver, 10).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "select[aria-label='rows per page']"))
+    def change_table_display_count(self, count=20):
+        """Altera o número de registros exibidos na tabela."""
+        select_element = self.driver.find_element(By.CSS_SELECTOR, "select[aria-label='rows per page']")
+        select = Select(select_element)
+        select.select_by_value(str(count))
+        time.sleep(1)  # Pequeno delay para garantir que a tabela seja atualizada
+
+        option_xpath = f"//option[@value='{count}']"
+        option = WebDriverWait(self.driver, 5).until(
+            EC.presence_of_element_located((By.XPATH, option_xpath))
         )
 
-        self.driver.execute_script("arguments[0].click();", dropdown)
-
+        # 🔹 Força o clique via JavaScript no elemento desejado
+        self.driver.execute_script("arguments[0].click();", option)
         option_xpath = f"//option[@value='{count}']"
         option = WebDriverWait(self.driver, 5).until(
             EC.presence_of_element_located((By.XPATH, option_xpath))

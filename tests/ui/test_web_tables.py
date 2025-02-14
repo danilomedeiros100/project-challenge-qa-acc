@@ -106,12 +106,28 @@ def criar_multiplos_registros(web_tables_page):
     web_tables_page.change_table_display_count(20)
 
 
+@when("crio 12 novos registros")
+def criar_multiplos_registros(web_tables_page):
+    """Cria 12 novos registros dinamicamente"""
+    pytest.registros_criados = []
+
+    for _ in range(12):
+        registro = generate_valid_web_tables_data()
+        pytest.registros_criados.append(registro)
+        web_tables_page.click_add_button()
+        web_tables_page.fill_registration_form(**registro)
+        web_tables_page.submit_registration()
+
+    # 📌 Alterar exibição para garantir que todos os 12 registros apareçam
+    web_tables_page.change_table_display_count(20)
+
 @then("todos os 12 registros devem estar na tabela")
-def validar_multiplos_registros(web_tables_page):
-    """Verifica se os 12 registros foram adicionados corretamente"""
+def validar_multiplos_registros_na_tabela(web_tables_page):
+    """Verifica se todos os 12 registros foram adicionados corretamente na tabela"""
+    assert len(pytest.registros_criados) == 12, "Os registros criados não foram armazenados corretamente!"
+
     for registro in pytest.registros_criados:
         assert web_tables_page.is_record_present(registro), f"O registro {registro} não foi encontrado na tabela!"
-
 
 @when("deleto todos os registros")
 def deletar_todos_registros(web_tables_page):
